@@ -1,22 +1,18 @@
 package com.epam.mjc.collections.combined;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-public class LessonsGetter {
-    public Set<String> getLessons(Map<String, List<String>> timetable) {
-        Set<String> lessons = new HashSet<>();
-        for (String k : timetable.keySet()) {
-            List<String> lesson1 = timetable.get(k);
-            for (String f : lesson1) {
-                lessons.add(f);
-            }
+public class MapFromKeysCreator {
+    public Map<Integer, Set<String>> createMap(Map<String, Integer> sourceMap) {
+        Map<Integer, Set<String>> keysMap = new HashMap<>();
+        List<String> keySt = new ArrayList<>();
+        for (String k : sourceMap.keySet()) {
+            keysMap.put(k.length(), new HashSet<>());
+            keySt.add(k);
         }
-        return lessons;
+        for (String k : keySt) {
+            keysMap.get(k.length()).add(k);
+        }
+        return keysMap;
     }
 }
