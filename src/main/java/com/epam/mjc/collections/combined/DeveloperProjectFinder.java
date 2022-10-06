@@ -1,7 +1,5 @@
 package com.epam.mjc.collections.combined;
 
-package com.epam.mjc.collections.combined;
-
 import java.util.*;
 
 public class DeveloperProjectFinder {
